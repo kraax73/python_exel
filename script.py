@@ -6,6 +6,9 @@ import openpyxl
 #デスクトップ上の既存Exelファイルの取得
 wb = openpyxl.load_workbook('/Users/kicks-t73/Desktop/test.xlsx')
 
+#ワークシートを新規作成("名前")
+wb.create_sheet("new")
+
 ws = wb.active
 
 #b1 = ws['B1'].value
