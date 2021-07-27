@@ -20,7 +20,23 @@ ws = wb['Sheet1']
 ws2 = wb['Sheet2']
 
 #Sheet1のB3セルの値をSheet2のB3セルにコピーする
-ws2["B1"] = ws["B1"].value
+ws2["B2"] = ws["B2"].value
+
+#「Sheet3」作成
+wb.create_sheet('Sheet3')
+
+#それぞれのシートを読み込む
+ws2 = wb['Sheet2']
+ws3 = wb['Sheet3']
+
+#Sheet2のB3セルの値をSheet3のB3セルにコピーする
+ws3["B2"] = ws2["B2"].value
+
+#Sheet3のA1にNo.、B1に長さ、C1に幅を入力
+ws3.cell(row = 1, column = 1).value = "No."
+ws3.cell(row = 1, column = 2).value = "長さ(mm)"
+ws3.cell(row = 1, column = 3).value = "幅(mm)"
+
 
 #b1 = ws['B1'].value
 #b2 = ws['B2'].value
